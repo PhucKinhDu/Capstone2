@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,CAAC,CACD;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CACvB;;AAED,AAAA,IAAI,EAAC,IAAI,CACT;EACE,WAAW,EAAE,yBAAyB;EACtC,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;EAChB,gBAAgB,EAAE,6DAA2F;CAC9G",
+    "sources": [
+        "../sass/main.scss",
+        "../sass/Helper/_variables.scss",
+        "../sass/Helper/_mixin.scss",
+        "../sass/Base/_reset.scss",
+        "../sass/Components/_button.scss",
+        "../sass/Layouts/_carousel.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
