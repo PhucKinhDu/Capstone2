@@ -98,7 +98,7 @@
 .card .infor .details p
 {
   @include styleText($fs-1,$fw-1,$color-black1);
-  line-height: $lh-2;
+  line-height: $lh-1;
 }
 
 .card .infor .price__btn
@@ -132,6 +132,3 @@
 //     border: 1px solid;
 //   }
 // }
-
-
-
