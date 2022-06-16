@@ -2,34 +2,40 @@
 {
   display: flex;
 }
-
-.Product
-{
-  margin: 20px;
-}
-
 .card
 {
+  margin: 20px;
   position: relative;
   width: 300px;
-  height: 90px;
-  // height: 450px;
-  background: $color-white1;
+  height: 350px;
+  background: #fff;
   border-radius: $radius-2;
   box-shadow: 0 35px 80px rgba(0,0,0,0.15);
   transition: all .5s;
+}
+.card
+{
   &:hover
   {
-    height: 450px;
-    opacity: 1;
+    height: 520px;
+    // height: auto;
+    .content
+    {
+      .name__product
+      {
+        .details
+        {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
-
-.imgItems
+.imgBx
 {
   position: absolute;
   left: 50%;
-  top: -70px;
+  top: -50px;
   transform: translateX(-50%);
   width: 150px;
   height: 150px;
@@ -39,153 +45,82 @@
   overflow: hidden;
   transition: all .5s;
 }
-
 .card
 {
   &:hover
   {
-    .imgItems
+    .imgBx
     {
-      width: 250px;
-      height: 250px;
+      width: 230px;
+      height: 230px;
     }
   }
 }
 
-.imgItems 
+.imgBx img
 {
-  img 
-  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-.card 
-{
-  .infor
-  {
-    margin-top: 100px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    // display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-  }
-}
-
 .card
 {
-  .infor
+  .content
   {
-    .details
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    top: 150px;
+    // overflow: hidden;
+    .name__product
     {
       padding: 40px;
-      text-align: left;
+      text-align: center;
       width: 100%;
-      transition: all .5s;
-      transform: translateY(50px);
-    }
-  }
-}
-
-.card
-{
-  .infor
-  {
-    .details
-    {
+      transition: 0.5s;
       h2 
       {
-        @include styleText($fs-4,$fw-3,$color-grey1);
+        font-size: $fs-4;
+        font-weight: $fw-3;
+        color: $color-grey1;
         line-height: $lh-1;
-      }
-    }
-  }
-}
-
-.card
-{
-  .infor
-  {
-    .details
-    {
-      h2 
-      {
         span 
         {
-          @include styleText($fs-2,$fw-4,$color-black1);
+          font-size: $fs-5;
+          font-weight: $fw-2;
           opacity: 0.7;
         }
       }
-    }
-  }
-}
-
-.card
-{
-  .infor
-  {
-    .details
-    {
-      p 
+      .details
       {
         @include styleText($fs-1,$fw-1,$color-black1);
-        line-height: $lh-1;
+        opacity: 0;
       }
     }
   }
 }
-
 .card
 {
-  .infor
+  .content
   {
-    .price__btn
+    .price__button
     {
       display: flex;
-      justify-content: space-between;
-      margin: 0 30px;
-    }
-  }
-}
-
-.card
-{
-  .infor
-  {
-    .price__btn
-    {
+      justify-content: space-evenly;
+      margin: $mg-4 0;
+      gap: 20px;
       span 
       {
-        @include styleText($fs-1,$fw-3,$color-white1);
-        @include styleButton($pd-1,$pd-3,$color-grey1);
-        border: none;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.35);
-        cursor: pointer;
+        @include styleText($fs-6,$fw-3,$color-grey1);
+        line-height: 44px;
       }
     }
+
   }
 }
-
-// .card .infor .price__btn button
-// {
-//   @include styleText($fs-1,$fw-3,$color-white1);
-//   @include styleButton($pd-1,$pd-3,$color-grey1);
-//   border: none;
-//   outline: none;
-//   box-shadow: 0 15px 50px rgba(0,0,0,0.35);
-//   transition: all .5s;
-//   &:hover
-//   {
-//     @include styleButtonHover($color-white1,$color-white1,$color-grey1);
-//     transform: scale(1.2);
-//     border: 1px solid;
-//   }
-// }
