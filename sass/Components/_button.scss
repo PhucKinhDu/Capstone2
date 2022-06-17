@@ -1,15 +1,13 @@
 .btn__add
 {
-  @include styleText($fs-1,$fw-3,$color-white1);
-  @include styleButton($pd-1,$pd-3,$color-grey1);
+  @include styleText($fs-1,$fw-3,$color-black1);
+  @include styleButton($pd-1,$pd-2,$color-white1);
   border: none;
   outline: none;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.35);
-  transition: all .5s;
   &:hover
   {
-    @include styleButtonHover($color-white1,$color-white1,$color-grey1);
-    transform: scale(1.2);
-    border: 1px solid;
+    @include styleText($fs-1,$fw-3,$color-white1);
+    @include styleButton($pd-1,$pd-2,$color-black1);
+    text-decoration: none;
   }
 }
