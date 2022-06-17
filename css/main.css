@@ -36,6 +36,16 @@ body {
   text-decoration: none;
 }
 
+.cart-icon {
+  cursor: pointer;
+}
+
+.cart-icon p {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .products {
   display: flex;
 }
