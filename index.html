@@ -22,86 +22,194 @@
 
 </head>
 <body>
-  <div class="cart-icon">
-    <p><i class="fa fa-shopping-cart"></i><sup>number</sup></p>
-  </div>
-  <section class="main">
-    <div class="products">
 
-      
-      <div class="card" style="width: 18rem;">
-        <img src="./img/AirPods Pro.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Airpods Pro</h5>
-          <p class="card-text">Wireless Noise Cancelling Earphones.</p>
-          <div class="price-btn">
-            <span>$400</span>
-            <a href="#" class="btn__add">Add to cart</a>
+  <header></header>
+    <section class="container products">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a
+            class="nav-link active"
+            id="nav-home-tab"
+            data-toggle="tab"
+            href="#danhsachsanpham"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+            >Danh Sách Sản Phẩm</a
+          >
+          <a
+            class="nav-link"
+            id="nav-home-tab1"
+            data-toggle="tab"
+            href="#danhsachgiohang"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+            >Giỏ Hàng</a
+          >
+        </div>
+      </nav>
+      <div class="tab-content mt-3">
+        <!-- tag Danh Sách Sản Phẩm -->
+        <div
+          class="tab-pane fade show active"
+          id="danhsachsanpham"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <div class="row">
+            <!-- <div class="col-md-4">
+              <button
+                id="btnThemMoiSP"
+                class="btn btn-info"
+                data-toggle="modal"
+                data-target="#myModal"
+              >
+                <i class="fa fa-plus mr-1"></i>
+                Thêm Mới Sản Phẩm
+              </button>
+            </div> -->
+            <div class="col-md-4">
+              <select class="btn btn-info" id="chonthuonghieu">
+                <option>- Chọn Hãng Điện Thoại -</option>
+                <option value="apple">Apple</option>
+                <option value="samsung">SamSung</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <!-- TÌM KIẾM -->
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập từ khóa"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text bg-info" id="findSP"
+                    ><i class="fa fa-search"></i
+                  ></span>
+                </div>
+              </div>
+              <!-- END TÌM KIẾM -->
+            </div>
           </div>
-          <p>AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy mode so much can hear your surroundings.</p>
+          <tbody>
+            <div
+              id="bodySP"
+              class="row border border-right-0 border-left-0"
+            ></div>
+          </tbody>
+        </div>
+        <!-- tag Giỏ Hàng -->
+        <div
+          class="tab-pane fade show"
+          id="danhsachgiohang"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab1"
+        >
+          <div class="tblGioHang" id="tblGioHang">
+            <!-- BEGIN TABLE SẢN PHẨM -->
+            <table class="table table-bordered">
+              <thead>
+                <div>
+                  <th>STT</th>
+                  <th>Tên Sản Phẩm</th>
+                  <th>Giá</th>
+                  <th>Số Lượng</th>
+                  <th>Thành Tiền</th>
+                </div>
+              </thead>
+              <tbody id="tblDanhSachGioHang"></tbody>
+            </table>
+            <!-- END TABLE SẢN PHẨM -->
+          </div>
         </div>
       </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="./img/Watch Series 7 LTE 41mm.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Apple Watch</h5>
-          <p class="card-text">You’ve never seen a watch like this.</p>
-          <div class="price-btn">
-            <span>$500</span>
-            <a href="#" class="btn__add">Add to cart</a>
+      <!-- modal thêm sản phẩm -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Thêm Sản Phẩm</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Tên Sản Phẩm</label>
+                <input
+                  id="TenSP"
+                  class="form-control"
+                  placeholder="Nhập vào tên sản phẩm"
+                />
+              </div>
+              <div class="form-group">
+                <label>Loại Sản Phẩm</label>
+                <select id="LoaiSP" class="form-control">
+                  <option value="">Loại Sản Phẩm</option>
+                  <option value="iphone">Iphone</option>
+                  <option value="samsung">SamSung</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Giá</label>
+                <input
+                  id="GiaSP"
+                  class="form-control"
+                  placeholder="Nhập vào giá"
+                />
+              </div>
+              <div class="form-group">
+                <label>Kích Thước Màn Hình</label>
+                <input
+                  type="text"
+                  id="KichThuocMH"
+                  class="form-control"
+                  placeholder="Nhập dung lượng bộ nhớ"
+                />
+              </div>
+              <div class="form-group">
+                <label>Camera Sau</label>
+                <input
+                  type="text"
+                  id="CamSauSP"
+                  class="form-control"
+                  placeholder="Nhập dung lượng bộ nhớ"
+                />
+              </div>
+              <div class="form-group">
+                <label>Camera Trước</label>
+                <input
+                  type="text"
+                  id="CamTruocSP"
+                  class="form-control"
+                  placeholder="Nhập dung lượng bộ nhớ"
+                />
+              </div>
+              <div class="form-group">
+                <label>Hình Ảnh</label>
+                <input
+                  id="HinhSP"
+                  class="form-control"
+                  placeholder="Nhập vào hình sản phẩm"
+                />
+              </div>
+              <div class="form-group">
+                <label for="">Mô tả Chức năng: </label>
+                <textarea id="MoTa" class="form-control"></textarea>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer"></div>
           </div>
-          <p>The most advanced Apple Watch yet, featuring the Always-On Retina display, the ECG app, international emergency calling, fall detection and a built‑in compass.</p>
         </div>
       </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="./img/iphone_13pm.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">iPhone 13 pm</h5>
-          <p class="card-text">Pro cameras. Pro display. Pro performance.</p>
-          <div class="price-btn">
-            <span>$2000</span>
-            <a href="#" class="btn__add">Add to cart</a>
-          </div>
-          <p>A mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="./img/ipad-pro-m1.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">iPad Pro</h5>
-          <p class="card-text">Your next computer is not a computer.</p>
-          <div class="price-btn">
-            <span>$1000</span>
-            <a href="#" class="btn__add">Add to cart</a>
-          </div>
-          <p>It’s a magical piece of glass. It’s so fast most PC laptops can’t catch up. And you can use it with touch, pencil, keyboard and now trackpad. It’s the new iPad Pro.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="./img/MacBook Pro 14 M1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Macbook Pro</h5>
-          <p class="card-text">The best for the brightest.</p>
-          <div class="price-btn">
-            <span>$2000</span>
-            <a href="#" class="btn__add">Add to cart</a>
-          </div>
-          <p>Designed for those who defy limits and change the world, the new MacBook Pro is by far the most powerful notebook we’ve ever made. it’s the ultimate pro notebook for the ultimate user.</p>
-        </div>
-      </div>
-
-
-    </div>
-  </section>
-
-
-
-
-
+    </section>
 
 
 
@@ -118,6 +226,11 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
+
+<script src="./app/services/SanPhamService.js"></script>
+<script src="./app/models/SanPham.js"></script>
+
+<script src="./app/controllers/main.js"></script>
 
 </body>
 </html>

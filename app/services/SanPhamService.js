@@ -1,5 +1,6 @@
-// Các phương thức
+// Lớp đối tượng
 function SanPhamService() {
+    // Các phương thức
     this.getList = function() {
         return axios({
             method: "get",

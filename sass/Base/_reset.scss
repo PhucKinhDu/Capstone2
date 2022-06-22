@@ -5,12 +5,8 @@
   box-sizing: border-box;
 }
 
+html,
 body 
 {
   font-family: 'Nunito Sans', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: $color-white1;
 }
